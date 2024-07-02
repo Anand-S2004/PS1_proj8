@@ -1,0 +1,17 @@
+-e ** BEGIN OUTPUT **
+
+** Insert one A object with one referenced B object and a referenced array of two C objects
+Error during inserting one or more given entities of class anand.Customer: Error running instance method
+com.softwaretree.jdx.JDXSQLException: Duplicate entry '1' for key 'Customers.PRIMARY'.  SQLException details follow.  SQLState: 23000; Message:  Duplicate entry '1' for key 'Customers.PRIMARY'; Vendor code:   1062
+	at com.softwaretree.jdx.JDXSImpl.insert(SourceFile:1001)
+	at com.softwaretree.jdx.JDXHelper.insert(SourceFile:476)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at node.MethodCallBaton.invokeMethod(MethodCallBaton.java:13)
+-e 
+** Query all anand.Customer objects (and their referenced B and C objects)
+[{"phone":"12345","last_name":"ABC","customer_id":1,"first_name":"abc","email":"a@987654"},{"phone":"23456","last_name":"XYZ","customer_id":2,"first_name":"JDK","email":"b@987654"}]
+** END OUTPUT **
+

@@ -1,0 +1,81 @@
+REM
+REM JDX (version: 05.02) reverse engineered config file
+REM JDX is a product of Software Tree, LLC.
+REM Date: Sun Jun 09 12:59:46 IST 2024
+REM
+
+JDX_DATABASE JDX:jdbc:mysql://172.17.0.1:3306/anand?useSSL=true;allowPublicKeyRetrieval=true;USER=anand;PASSWORD=!Anand123;JDX_DBTYPE=MYSQL;DEBUG_LEVEL=5
+JDBC_DRIVER com.mysql.cj.jdbc.Driver
+JDX_OBJECT_MODEL_PACKAGE anand
+;
+CLASS .Order TABLE Orders
+    VIRTUAL_ATTRIB status ATTRIB_TYPE java.lang.String
+    VIRTUAL_ATTRIB order_date ATTRIB_TYPE java.sql.Timestamp
+    VIRTUAL_ATTRIB customer_id ATTRIB_TYPE int
+    VIRTUAL_ATTRIB order_id ATTRIB_TYPE int
+    PRIMARY_KEY order_id
+    RELATIONSHIP listOrderItem REFERENCES .ListOrderItem BYVALUE WITH order_id
+    SQLMAP FOR status NULLABLE
+;
+
+COLLECTION_CLASS .ListOrder COLLECTION_TYPE ARRAY ELEMENT_CLASS .Order ELEMENT_TABLE Orders
+    PRIMARY_KEY customer_id
+;
+
+COLLECTION_CLASS .ListUserProfile COLLECTION_TYPE ARRAY ELEMENT_CLASS .UserProfile ELEMENT_TABLE UserProfiles
+    PRIMARY_KEY user_id
+;
+
+CLASS .UserProfile TABLE UserProfiles
+    VIRTUAL_ATTRIB profile_id ATTRIB_TYPE int
+    VIRTUAL_ATTRIB date_of_birth ATTRIB_TYPE java.util.Date
+    VIRTUAL_ATTRIB user_id ATTRIB_TYPE int
+    VIRTUAL_ATTRIB address ATTRIB_TYPE java.lang.String
+    VIRTUAL_ATTRIB phone_number ATTRIB_TYPE java.lang.String
+    PRIMARY_KEY profile_id
+    SQLMAP FOR date_of_birth NULLABLE
+    SQLMAP FOR address NULLABLE
+    SQLMAP FOR phone_number NULLABLE
+;
+
+CLASS .OrderItem TABLE OrderItems
+    VIRTUAL_ATTRIB order_item_id ATTRIB_TYPE int
+    VIRTUAL_ATTRIB product_id ATTRIB_TYPE int
+    VIRTUAL_ATTRIB price ATTRIB_TYPE java.math.BigDecimal
+    VIRTUAL_ATTRIB quantity ATTRIB_TYPE int
+    VIRTUAL_ATTRIB order_id ATTRIB_TYPE int
+    PRIMARY_KEY order_item_id
+;
+
+CLASS .Customer TABLE Customers
+    VIRTUAL_ATTRIB phone ATTRIB_TYPE java.lang.String
+    VIRTUAL_ATTRIB last_name ATTRIB_TYPE java.lang.String
+    VIRTUAL_ATTRIB email ATTRIB_TYPE java.lang.String
+    VIRTUAL_ATTRIB first_name ATTRIB_TYPE java.lang.String
+    VIRTUAL_ATTRIB customer_id ATTRIB_TYPE int
+    PRIMARY_KEY customer_id
+    RELATIONSHIP listOrder REFERENCES .ListOrder BYVALUE WITH customer_id
+    SQLMAP FOR phone NULLABLE
+;
+
+CLASS .User TABLE Users
+    VIRTUAL_ATTRIB user_id ATTRIB_TYPE int
+    VIRTUAL_ATTRIB password ATTRIB_TYPE java.lang.String
+    VIRTUAL_ATTRIB email ATTRIB_TYPE java.lang.String
+    VIRTUAL_ATTRIB username ATTRIB_TYPE java.lang.String
+    PRIMARY_KEY user_id
+    RELATIONSHIP listUserProfile REFERENCES .ListUserProfile BYVALUE WITH user_id
+;
+
+CLASS .Category TABLE Categories
+    VIRTUAL_ATTRIB name ATTRIB_TYPE java.lang.String
+    VIRTUAL_ATTRIB category_id ATTRIB_TYPE int
+    VIRTUAL_ATTRIB description ATTRIB_TYPE java.lang.String
+    PRIMARY_KEY category_id
+    SQLMAP FOR description NULLABLE
+;
+
+COLLECTION_CLASS .ListOrderItem COLLECTION_TYPE ARRAY ELEMENT_CLASS .OrderItem ELEMENT_TABLE OrderItems
+    PRIMARY_KEY order_id
+;
+
