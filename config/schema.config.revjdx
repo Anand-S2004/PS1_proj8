@@ -10,12 +10,13 @@ JDX_OBJECT_MODEL_PACKAGE anand
 ;
 CLASS .Order TABLE Orders
     VIRTUAL_ATTRIB status ATTRIB_TYPE java.lang.String
-    VIRTUAL_ATTRIB order_date ATTRIB_TYPE java.sql.Timestamp
+    VIRTUAL_ATTRIB order_date ATTRIB_TYPE long
     VIRTUAL_ATTRIB customer_id ATTRIB_TYPE int
     VIRTUAL_ATTRIB order_id ATTRIB_TYPE int
     PRIMARY_KEY order_id
     RELATIONSHIP listOrderItem REFERENCES .ListOrderItem BYVALUE WITH order_id
     SQLMAP FOR status NULLABLE
+    SQLMAP for order_date SQLTYPE TIMESTAMP
 ;
 
 COLLECTION_CLASS .ListOrder COLLECTION_TYPE ARRAY ELEMENT_CLASS .Order ELEMENT_TABLE Orders
@@ -28,12 +29,12 @@ COLLECTION_CLASS .ListUserProfile COLLECTION_TYPE ARRAY ELEMENT_CLASS .UserProfi
 
 CLASS .UserProfile TABLE UserProfiles
     VIRTUAL_ATTRIB profile_id ATTRIB_TYPE int
-    VIRTUAL_ATTRIB date_of_birth ATTRIB_TYPE java.util.Date
+    VIRTUAL_ATTRIB date_of_birth ATTRIB_TYPE long
     VIRTUAL_ATTRIB user_id ATTRIB_TYPE int
     VIRTUAL_ATTRIB address ATTRIB_TYPE java.lang.String
     VIRTUAL_ATTRIB phone_number ATTRIB_TYPE java.lang.String
     PRIMARY_KEY profile_id
-    SQLMAP FOR date_of_birth NULLABLE
+    SQLMAP FOR date_of_birth SQLTYPE TIMESTAMP
     SQLMAP FOR address NULLABLE
     SQLMAP FOR phone_number NULLABLE
 ;
@@ -41,7 +42,7 @@ CLASS .UserProfile TABLE UserProfiles
 CLASS .OrderItem TABLE OrderItems
     VIRTUAL_ATTRIB order_item_id ATTRIB_TYPE int
     VIRTUAL_ATTRIB product_id ATTRIB_TYPE int
-    VIRTUAL_ATTRIB price ATTRIB_TYPE java.math.BigDecimal
+    VIRTUAL_ATTRIB price ATTRIB_TYPE int
     VIRTUAL_ATTRIB quantity ATTRIB_TYPE int
     VIRTUAL_ATTRIB order_id ATTRIB_TYPE int
     PRIMARY_KEY order_item_id
@@ -71,11 +72,10 @@ CLASS .Category TABLE Categories
     VIRTUAL_ATTRIB name ATTRIB_TYPE java.lang.String
     VIRTUAL_ATTRIB category_id ATTRIB_TYPE int
     VIRTUAL_ATTRIB description ATTRIB_TYPE java.lang.String
-    PRIMARY_KEY category_id
     SQLMAP FOR description NULLABLE
+    PRIMARY_KEY category_id
 ;
 
 COLLECTION_CLASS .ListOrderItem COLLECTION_TYPE ARRAY ELEMENT_CLASS .OrderItem ELEMENT_TABLE OrderItems
     PRIMARY_KEY order_id
 ;
-
