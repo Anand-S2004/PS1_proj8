@@ -25,3 +25,5 @@ Note that localhost is not an option and you can pass the IP address of your sys
 
 Once the image container is up and running, the microservice can communicate with a standalone program to transfer data in and out of the RDBMS.
 *****************************************************************
+The code for the standalone program is in the bin directory, master branch. 
+Happy Learning!
