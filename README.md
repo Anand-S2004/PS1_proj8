@@ -7,7 +7,8 @@ JSON has become a popular format for exchanging information, while relational da
 
 To start, we reverse-engineer Java classes from the ORM mapping of selected tables in the source database. JDX simplifies this process by automatically generating Java classes and mapping them to the relational schema. Reverse engineering of databases refers to the process of extracting detailed information about the structure, relationships, and functionality of a database system from its existing data and schema definitions, typically without access to the original source code or documentation. By reverse engineering, developers gain insights into how tables, columns, indexes, constraints, and relationships are organized within the database.
 
-Benefits of This Methodology
+Benefits of This Methodology:
+
 **Simplicity and Ease of Use**: By leveraging JDX and Gilhari, the project simplifies the complexities of database interaction and data transfer, making it accessible even for developers with limited database management experience.
 
 **Efficiency**: Automating schema creation and data migration reduces manual effort and minimizes the risk of errors, enhancing overall project efficiency.
