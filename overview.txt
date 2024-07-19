@@ -1,0 +1,13 @@
+A little insight into what everything is about:
+In this project, we aim to recreate the dealings of an ecommerce company. We have chosen six tables for our schema to implement a simplified version of this company
+Categories:
+Users
+Customers
+UserProfiles
+Orders
+OrderItems
+in the project, we aim to demonstrate data transfer in and out of each table using http methods for our API calls.
+By using JDX to provide an ORM mapping, we can create java files that follow this mapping automatically, thus allowing us to compile these files later into class files and build a docker image to run an app specific microservice.
+What do I mean by app specific microservice? This means you are creating a schema that caters to the specific service YOU want to provide. 
+All you need to do is specify an ORM mapping, and JDX will create the schema you want automatically and specify it in a .revjdx file
+You can also set the force_schema option to false if you don't want it to override your current schema. It is also advisable to edit the .revjdx file as per your semantic needs as JDX may generate mappings that don't match with the semantic knowledge of the user.
