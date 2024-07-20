@@ -17,8 +17,8 @@ Benefits of This Methodology:
 
 **Flexibility and Scalability**: The use of a microservice architecture ensures that the solution can scale with growing data volumes and adapt to evolving business needs without extensive reconfiguration.
 
-Note that the the microservice is database agnostic and that any database can be used, with only minor changes to the config files and the service_config files. This improves efficiency of the software it is being used in conjunction with as there is no need for different formats of object data for different databases. JDX provides an ORM mapping by itself given specifications of the table to be mapping and creates a schema for the user unless told not to. Overall, in conjunction, JDX and Gilhari provide for a low code, highly maintainable and efficient database management system.
-NOTE: JDX and Gilhari are trademark tools of Software Tree, California and have been used with necessary authority only for the scope of this project.
+Note that the the microservice is database agnostic and that any database can be used, with only minor changes to the config files and the service_config files. This improves efficiency of the software it is being used in conjunction with as there is no need for different formats of object data for different databases.
+
 *****************************************************************
 Refer to the master branch for code. Following is a simple overview of the project.
 **OS: linux
