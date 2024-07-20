@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.sql.Date;  // Correct import for java.sql.Date
 import java.util.Scanner;
 
-public class InsertUserProfiles {
+public class ManageUserProfiles {
 
     private static final String BASE_URL = "http://localhost:80/gilhari/v1/anand.UserProfile";
     private static final String BASE_URL_PUT = "http://localhost:80/gilhari/v1/anand.UserProfile/updateEntity";
