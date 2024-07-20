@@ -6,14 +6,14 @@ Database Schema
 This section outlines the database schema used in the project, including the six tables and their relationships.
 Tables and Relationships
 Independent Tables:
-    Customers: Stores customer information.
+    Customers: Stores customer information. These include past customers who have had dealings with the firm before.
     Categories: Stores product category information.
 One-to-One Relationship:
-    Users: Stores user account information.
+    Users: Stores user account information. These include only active customers, as in customers that are actively having an account with the firm.
     UserProfiles: Stores additional user profile information, related to Users.
 One-to-Many Relationship:
     Orders: Stores order information, related to Customers.
-    OrderItems: Stores individual items within an order, related to Orders.
+    OrderItems: Stores individual items within an order, related to Orders. Useful for tracking Orders by its ID.
 Explanation of Relationships
   Independent Tables:
     Customers and Categories are standalone tables with no direct relationships to other tables.
