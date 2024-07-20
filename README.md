@@ -5,7 +5,9 @@ This project will use Software Tree's products JDX (an ORM mapping tool) and Gil
 
 JSON has become a popular format for exchanging information, while relational databases remain fundamental for data storage. This project aims at seamless JSON data manipulation using relational databases, facilitated by the Gilhari microservice and JDX ORM mapping tool from Software Tree.
 
-To start, we reverse-engineer Java classes from the ORM mapping of selected tables in the source database. JDX simplifies this process by automatically generating Java classes and mapping them to the relational schema. Reverse engineering of databases refers to the process of extracting detailed information about the structure, relationships, and functionality of a database system from its existing data and schema definitions, typically without access to the original source code or documentation. By reverse engineering, developers gain insights into how tables, columns, indexes, constraints, and relationships are organized within the database.
+To start, we reverse-engineer Java classes from the ORM mapping of selected tables in the database. JDX simplifies this process by automatically generating Java classes and mapping them to the relational schema.**Reverse engineering** of databases refers to the process of extracting detailed information about the structure, relationships, and functionality of a database system from its existing data and schema definitions, typically without access to the original source code or documentation. By reverse engineering, developers gain insights into how tables, columns, indexes, constraints, and relationships are organized within the database.
+
+Then, we've developed a specialized Gilhari microservice tailored for your app's needs, utilizing reverse-engineered classes and mappings. This microservice is configured to offer RESTful APIs, allowing CRUD operations on JSON objects.
 
 Benefits of This Methodology:
 
