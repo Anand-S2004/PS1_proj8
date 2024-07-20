@@ -11,7 +11,7 @@ import org.apache.http.util.EntityUtils;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class InsertOrderItems {
+public class ManageOrderItems {
     private static final String BASE_URL = "http://localhost:80/gilhari/v1/anand.OrderItem";
     private static final String BASE_URL_PUT = "http://localhost:80/gilhari/v1/anand.OrderItem/updateEntity";
 
