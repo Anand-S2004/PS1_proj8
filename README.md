@@ -3,7 +3,7 @@ Using reverse engineered Java Classes to move JSON objects using the gilhari mic
 This project will use Software Tree's products JDX (an ORM mapping tool) and Gilhari to first reverse engineer Java classes from an ORM mapping, and then running the Gilhari app specific microservice in a docker image to transfer JSON data in and out of the RDBMS.
 *****************************************************************
 
-JSON has become a popular format for exchanging information, while relational databases remain fundamental for data storage. This project aims at seamless JSON data manipulation using relational databases, facilitated by the Gilhari microservice and JDX ORM mapping tool from Software Tree.
+JSON has become a popular format for exchanging information, while relational databases remain fundamental for data storage. This project aims at JSON data manipulation using relational databases, facilitated by the Gilhari microservice and JDX ORM mapping tool from Software Tree.
 
 To start, we reverse-engineer Java classes from the ORM mapping of selected tables in the database. JDX simplifies this process by automatically generating Java classes and mapping them to the relational schema.**Reverse engineering** of databases refers to the process of extracting detailed information about the structure, relationships, and functionality of a database system from its existing data and schema definitions, typically without access to the original source code or documentation. By reverse engineering, developers gain insights into how tables, columns, indexes, constraints, and relationships are organized within the database.
 
