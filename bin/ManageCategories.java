@@ -8,7 +8,7 @@ import org.apache.http.util.EntityUtils;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class InsertCategories {
+public class ManageCategories {
 
     private static final String BASE_URL = "http://localhost:80/gilhari/v1/anand.Category";
     private static final String BASE_URL_PUT = "http://localhost:80/gilhari/v1/anand.Category/updateEntity";
