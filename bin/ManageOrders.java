@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 
-public class InsertOrder {
+public class ManageOrders {
     public static void main(String[] args) throws Throwable {
         CloseableHttpClient httpClient = HttpClients.createDefault();
         String endpoint = "http://localhost:80/gilhari/v1/anand.Order"; // Replace with your actual endpoint
