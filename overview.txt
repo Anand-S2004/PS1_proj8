@@ -1,11 +1,27 @@
 A little insight into what everything is about:
+This project involves creating a database with six tables, two independent, two with a one-to-one relationship, and two with a one-to-many relationship. The project utilizes JDX, a lightweight and flexible Java ORM engine, to reverse engineer JSON object model artifacts from the created database schema. The goal is to develop an app-specific Gilhari microservice, leveraging these reverse-engineered classes and mappings. This microservice will facilitate the exchange of JSON data between an application and a relational database through RESTful APIs, allowing for CRUD operations without requiring additional code for database schema creation or data handling
 In this project, we aim to recreate the dealings of an ecommerce company. We have chosen six tables for our schema to implement a simplified version of this company
-Categories:
-Users
-Customers
-UserProfiles
-Orders
-OrderItems
+Database Schema
+This section outlines the database schema used in the project, including the six tables and their relationships.
+Tables and Relationships
+Independent Tables:
+    Customers: Stores customer information.
+    Categories: Stores product category information.
+One-to-One Relationship:
+    Users: Stores user account information.
+    UserProfiles: Stores additional user profile information, related to Users.
+One-to-Many Relationship:
+    Orders: Stores order information, related to Customers.
+    OrderItems: Stores individual items within an order, related to Orders.
+Explanation of Relationships
+  Independent Tables:
+    Customers and Categories are standalone tables with no direct relationships to other tables.
+  One-to-One Relationship:
+    Users and UserProfiles are linked through a one-to-one relationship, where each user has a unique profile. This is achieved through the foreign key constraint      on user_id in the UserProfiles table referencing user_id in the Users table.
+  One-to-Many Relationship:
+    Orders and Customers have a one-to-many relationship, where each customer can have multiple orders. This is established through the foreign key constraint on       customer_id in the Orders table referencing customer_id in the Customers table.
+    OrderItems and Orders have a one-to-many relationship, where each order can have multiple order items. This is defined through the foreign key constraint on         order_id in the OrderItems table referencing order_id in the Orders table.
+
 in the project, we aim to demonstrate data transfer in and out of each table using http methods for our API calls.
 By using JDX to provide an ORM mapping, we can create java files that follow this mapping automatically, thus allowing us to compile these files later into class files and build a docker image to run an app specific microservice.
 What do I mean by app specific microservice? This means you are creating a schema that caters to the specific service YOU want to provide. 
